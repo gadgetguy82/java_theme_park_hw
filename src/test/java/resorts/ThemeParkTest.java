@@ -55,4 +55,9 @@ public class ThemeParkTest {
     assertEquals(1, rollerCoaster.getVisitCount());
     assertEquals(1, visitor.getVisitedAttractions().size());
   }
+
+  @Test
+  public void canReturnReviewHashMap() {
+    assertEquals(10, themePark.getAllReviewedHash());
+  }
 }

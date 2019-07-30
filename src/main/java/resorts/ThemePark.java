@@ -6,6 +6,7 @@ import people.Visitor;
 import stalls.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ThemePark {
   private ArrayList<Attraction> attractions;
@@ -38,4 +39,6 @@ public class ThemePark {
     attraction.addVisitCount();
     visitor.addAttraction(attraction);
   }
+
+
 }
