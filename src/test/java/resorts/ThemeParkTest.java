@@ -17,7 +17,7 @@ public class ThemeParkTest {
   CandyflossStall candyflossStall;
   IceCreamStall iceCreamStall;
   TobaccoStall tobaccoStall;
-  Visitor visitor;
+  Visitor visitor1, visitor2;
 
   @Before
   public void setUp() {
@@ -36,7 +36,8 @@ public class ThemeParkTest {
     themePark.addStall(candyflossStall);
     themePark.addStall(iceCreamStall);
     themePark.addStall(tobaccoStall);
-    visitor = new Visitor(26, 1.67, 243.00);
+    visitor1 = new Visitor(26, 1.67, 243.00);
+    visitor2 = new Visitor(13, 1.67, 20.00);
   }
 
   @Test
@@ -51,13 +52,18 @@ public class ThemeParkTest {
 
   @Test
   public void canVisitAttraction() {
-    themePark.visit(visitor, rollerCoaster);
+    themePark.visit(visitor1, rollerCoaster);
     assertEquals(1, rollerCoaster.getVisitCount());
-    assertEquals(1, visitor.getVisitedAttractions().size());
+    assertEquals(1, visitor1.getVisitedAttractions().size());
   }
 
   @Test
   public void canReturnReviewHashMap() {
     assertEquals(new Integer(10), themePark.getAllReviewedHash().get("Blue Ridge"));
+  }
+
+  @Test
+  public void canReturnAllPlacesVisitorIsAllowed() {
+    assertEquals(2, themePark.getAllAllowedFor(visitor2));
   }
 }
