@@ -40,4 +40,9 @@ public class ThemeParkTest {
   public void hasListOfAttractionsAndStores() {
     assertEquals(7, themePark.placesCount());
   }
+
+  @Test
+  public void canGetAllReviewed() {
+    assertEquals(7, themePark.getAllReviewed().size());
+  }
 }

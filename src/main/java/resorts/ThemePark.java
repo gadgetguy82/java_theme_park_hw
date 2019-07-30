@@ -1,10 +1,12 @@
 package resorts;
 
 import attractions.Attraction;
+import behaviours.IReviewed;
 import org.w3c.dom.Attr;
 import stalls.Stall;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 
 public class ThemePark {
   private ArrayList<Attraction> attractions;
@@ -26,4 +28,5 @@ public class ThemePark {
   public int placesCount() {
     return this.attractions.size() + this.stalls.size();
   }
+
 }
