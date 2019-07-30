@@ -58,6 +58,6 @@ public class ThemeParkTest {
 
   @Test
   public void canReturnReviewHashMap() {
-    assertEquals(10, themePark.getAllReviewedHash());
+    assertEquals(new Integer(10), themePark.getAllReviewedHash().get("Blue Ridge"));
   }
 }

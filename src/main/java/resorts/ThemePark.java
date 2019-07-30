@@ -40,5 +40,11 @@ public class ThemePark {
     visitor.addAttraction(attraction);
   }
 
-
+  public HashMap<String, Integer> getAllReviewedHash() {
+    HashMap<String, Integer> reviewHash = new HashMap<String, Integer>();
+    for (IReviewed review : getAllReviewed()) {
+      reviewHash.put(review.getName(), review.getRating());
+    }
+    return reviewHash;
+  }
 }
