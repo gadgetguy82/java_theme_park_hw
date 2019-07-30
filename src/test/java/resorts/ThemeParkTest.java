@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import stalls.*;
 
+import static org.junit.Assert.assertEquals;
+
 public class ThemeParkTest {
   ThemePark themePark;
   Dodgems dodgems;
@@ -25,10 +27,17 @@ public class ThemeParkTest {
     candyflossStall = new CandyflossStall("Candy Land", "Harry Belafonte", ParkingSpot.A1, 8);
     iceCreamStall = new IceCreamStall("Dream Cones", "Vanilla Ice", ParkingSpot.A4, 7);
     tobaccoStall = new TobaccoStall("Jacks Drum", "Jack Jarvis", ParkingSpot.B1, 7);
+    themePark.addAttraction(dodgems);
+    themePark.addAttraction(park);
+    themePark.addAttraction(playground);
+    themePark.addAttraction(rollerCoaster);
+    themePark.addStall(candyflossStall);
+    themePark.addStall(iceCreamStall);
+    themePark.addStall(tobaccoStall);
   }
 
   @Test
   public void hasListOfAttractionsAndStores() {
-
+    assertEquals(7, themePark.placesCount());
   }
 }
