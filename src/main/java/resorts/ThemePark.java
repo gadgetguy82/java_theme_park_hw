@@ -1,7 +1,9 @@
 package resorts;
 
 import attractions.Attraction;
+import attractions.RollerCoaster;
 import behaviours.IReviewed;
+import people.Visitor;
 import stalls.Stall;
 
 import java.util.ArrayList;
@@ -31,5 +33,8 @@ public class ThemePark {
     ArrayList<IReviewed> reviewedList = new ArrayList<IReviewed>(this.attractions);
     reviewedList.addAll(this.stalls);
     return reviewedList;
+  }
+
+  public void visit(Visitor visitor, RollerCoaster rollerCoaster) {
   }
 }

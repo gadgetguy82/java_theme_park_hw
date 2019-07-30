@@ -3,6 +3,7 @@ package resorts;
 import attractions.*;
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 import stalls.*;
 
 import static org.junit.Assert.assertEquals;
@@ -16,6 +17,7 @@ public class ThemeParkTest {
   CandyflossStall candyflossStall;
   IceCreamStall iceCreamStall;
   TobaccoStall tobaccoStall;
+  Visitor visitor;
 
   @Before
   public void setUp() {
@@ -34,6 +36,7 @@ public class ThemeParkTest {
     themePark.addStall(candyflossStall);
     themePark.addStall(iceCreamStall);
     themePark.addStall(tobaccoStall);
+    visitor = new Visitor(26, 1.67, 243.00);
   }
 
   @Test
@@ -44,5 +47,12 @@ public class ThemeParkTest {
   @Test
   public void canGetAllReviewed() {
     assertEquals(7, themePark.getAllReviewed().size());
+  }
+
+  @Test
+  public void canVisitAttraction() {
+    themePark.visit(visitor, rollerCoaster);
+    assertEquals(1, rollerCoaster.getVisitCount());
+    assertEquals(1, visitor.getVisitedAttractions().size());
   }
 }
