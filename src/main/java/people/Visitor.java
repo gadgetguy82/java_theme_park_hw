@@ -1,5 +1,9 @@
 package people;
 
+import attractions.Attraction;
+
+import java.util.ArrayList;
+
 public class Visitor {
 
     private int age;
@@ -22,5 +26,8 @@ public class Visitor {
 
     public double getMoney() {
         return money;
+    }
+
+    public ArrayList<Attraction> getVisitedAttractions() {
     }
 }

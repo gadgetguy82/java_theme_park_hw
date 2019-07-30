@@ -2,11 +2,9 @@ package resorts;
 
 import attractions.Attraction;
 import behaviours.IReviewed;
-import org.w3c.dom.Attr;
 import stalls.Stall;
 
 import java.util.ArrayList;
-import java.util.BitSet;
 
 public class ThemePark {
   private ArrayList<Attraction> attractions;

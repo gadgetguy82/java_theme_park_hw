@@ -1,6 +1,5 @@
 package stalls;
 
-import attractions.Park;
 import org.junit.Before;
 import org.junit.Test;
 
