@@ -29,4 +29,9 @@ public class ThemePark {
     return this.attractions.size() + this.stalls.size();
   }
 
+  public ArrayList<IReviewed> getAllReviewed() {
+    ArrayList<IReviewed> reviewedList = new ArrayList<IReviewed>(this.attractions);
+    reviewedList.addAll(this.stalls);
+    return reviewedList;
+  }
 }
