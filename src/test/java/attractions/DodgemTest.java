@@ -41,6 +41,6 @@ public class DodgemTest {
 
     @Test
     public void chargesHalfPriceForUnder12() {
-        assertEquals(2.25, dodgems.priceFor(visitor1));
+        assertEquals(2.25, dodgems.priceFor(visitor1), 0.01);
     }
 }
