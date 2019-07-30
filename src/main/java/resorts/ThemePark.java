@@ -2,6 +2,7 @@ package resorts;
 
 import attractions.*;
 import behaviours.IReviewed;
+import behaviours.ISecurity;
 import people.Visitor;
 import stalls.*;
 
@@ -46,5 +47,17 @@ public class ThemePark {
       reviewHash.put(review.getName(), review.getRating());
     }
     return reviewHash;
+  }
+
+  public ArrayList<ISecurity> getAllAllowedFor(Visitor visitor) {
+    ArrayList<ISecurity> securityList = new ArrayList<ISecurity>();
+    for (IReviewed review : getAllReviewed()) {
+      if (review instanceof ISecurity) {
+        if (((ISecurity) review).isAllowedTo(visitor)) {
+          securityList.add((ISecurity) review);
+        }
+      }
+    }
+    return securityList;
   }
 }
