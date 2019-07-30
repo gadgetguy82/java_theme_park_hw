@@ -54,4 +54,9 @@ public class RollerCoasterTest {
     public void returnTrueWhenOver12andOver145() {
         assertEquals(true, rollerCoaster.isAllowedTo(visitor4));
     }
+
+    @Test
+    public void hasDefaultPrice() {
+        assertEquals(8.40, rollerCoaster.defaultPrice(), 0.01);
+    }
 }
