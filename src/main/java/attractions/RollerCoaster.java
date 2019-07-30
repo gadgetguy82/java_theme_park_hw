@@ -14,5 +14,7 @@ public class RollerCoaster extends Attraction implements ISecurity, ITicketed {
         return visitor.getAge() > 12 && visitor.getHeight() > 1.45;
     }
 
-
+    public double defaultPrice() {
+        return 8.4;
+    }
 }

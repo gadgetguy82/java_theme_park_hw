@@ -2,16 +2,20 @@ package attractions;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 
 import static org.junit.Assert.assertEquals;
 
 public class DodgemTest {
 
     Dodgems dodgems;
+    Visitor visitor1, visitor2;
 
     @Before
     public void setUp() throws Exception {
         dodgems = new Dodgems("Bumper Cars", 5);
+        visitor1 = new Visitor(10, 1.68, 20.00);
+        visitor2 = new Visitor(15, 1.3, 40.00);
     }
 
 
@@ -33,5 +37,10 @@ public class DodgemTest {
     @Test
     public void hasDefaultPrice() {
         assertEquals(4.50, dodgems.defaultPrice(), 0.01);
+    }
+
+    @Test
+    public void chargesHalfPriceForUnder12() {
+        assertEquals(2.25, dodgems.priceFor(visitor1));
     }
 }

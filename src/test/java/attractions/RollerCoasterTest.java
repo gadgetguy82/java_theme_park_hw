@@ -17,7 +17,7 @@ public class RollerCoasterTest {
         visitor1 = new Visitor(10, 1.2, 50.00);
         visitor2 = new Visitor(10, 1.68, 20.00);
         visitor3 = new Visitor(15, 1.3, 40.00);
-        visitor4 = new Visitor(20, 1.75, 250.00);
+        visitor4 = new Visitor(20, 2.05, 250.00);
     }
 
     @Test
@@ -58,5 +58,10 @@ public class RollerCoasterTest {
     @Test
     public void hasDefaultPrice() {
         assertEquals(8.40, rollerCoaster.defaultPrice(), 0.01);
+    }
+
+    @Test
+    public void chargesDoubleForVisitorsOver200() {
+        assertEquals(16.80, rollerCoaster.priceFor(visitor4), 0.01);
     }
 }
