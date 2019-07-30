@@ -33,12 +33,12 @@ public class PlaygroundTest {
     }
 
     @Test
-    public void canCheckVisitorRestriction() {
+    public void canReturnTrueWhenVisitorIsUnder16() {
         assertEquals(true, playground.isAllowedTo(visitor1));
     }
 
     @Test
-    public void canCheckVisitorRestriction() {
+    public void canReturnFalseWhenVisitorIsOver15() {
         assertEquals(false, playground.isAllowedTo(visitor2));
     }
 }
